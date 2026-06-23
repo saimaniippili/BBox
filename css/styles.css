@@ -729,9 +729,12 @@ img {
 
 /* --- Premium Interactive Talent-Matching Network Hub (Unified Core) --- */
 .talent-network-hub {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -3340,6 +3343,13 @@ section {
 }
 
 @media (max-width: 768px) {
+    .brainbox-canvas-container {
+        width: 380px;
+        height: 380px;
+    }
+    .talent-network-hub {
+        transform: translate(-50%, -50%) scale(0.79);
+    }
     section {
         padding: 80px 0;
     }
@@ -3441,8 +3451,20 @@ section {
     }
     
     .brainbox-canvas-container {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .talent-network-hub {
+        transform: translate(-50%, -50%) scale(0.625);
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .slide-drawer {
+        padding: 30px 16px;
     }
 }
 
@@ -3491,7 +3513,7 @@ section {
 
 /* 6-Card Services and Industries Grids */
 .services-six-grid, .industries-six-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important;
 }
 
 /* Why Choose Us Block with SVG Trophy */

@@ -1108,8 +1108,10 @@ function initHeroCanvas() {
         const rect = e.currentTarget.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
         
-        const x = rect.left - containerRect.left + rect.width / 2;
-        const y = rect.top - containerRect.top;
+        const scale = hub.getBoundingClientRect().width / hub.offsetWidth || 1;
+        
+        const x = (rect.left - containerRect.left + rect.width / 2) / scale;
+        const y = (rect.top - containerRect.top) / scale;
         
         tooltip.style.left = `${x}px`;
         tooltip.style.top = `${y}px`;
@@ -1136,6 +1138,8 @@ function initHeroCanvas() {
             }
         });
         
+        const scale = hub.getBoundingClientRect().width / hub.offsetWidth || 1;
+        
         // Ingestion phase
         activeNodes.forEach(({ node }) => {
             node.style.animation = "none";
@@ -1143,8 +1147,8 @@ function initHeroCanvas() {
             const rect = node.getBoundingClientRect();
             const engineRect = engineNode.getBoundingClientRect();
             
-            const dx = (engineRect.left + engineRect.width / 2) - (rect.left + rect.width / 2);
-            const dy = (engineRect.top + engineRect.height / 2) - (rect.top + rect.height / 2);
+            const dx = ((engineRect.left + engineRect.width / 2) - (rect.left + rect.width / 2)) / scale;
+            const dy = ((engineRect.top + engineRect.height / 2) - (rect.top + rect.height / 2)) / scale;
             
             node.style.transition = "transform 0.6s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.6s ease";
             node.style.transform = `translate(${dx}px, ${dy}px) scale(0)`;
