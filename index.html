@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta_title">Brainbox Staffing | Premium Enterprise Recruitment & Staffing</title>
+    <meta name="description" content="Premium enterprise recruitment, werving en selectie, executive search, and interim staffing solutions. Inspired by Brainbox Consulting, powered by advanced AI job matching." data-i18n-attr="content:meta_description">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Skip to content</a>
+
+    <!-- Background Glowing Ambient Mesh Blobs -->
+    <div class="ambient-glow-container" aria-hidden="true">
+        <div class="glow-blob glow-orange-1"></div>
+        <div class="glow-blob glow-orange-2"></div>
+        <div class="glow-blob glow-orange-3"></div>
+    </div>
+
+
+
+    <!-- Header / Navigation -->
+    <header class="main-header" id="main-header">
+        <div class="container header-container">
+            <!-- Brand Logo -->
+            <a href="#" class="logo-container" aria-label="Brainbox Staffing Home">
+                <img src="assets/logo.png" alt="Brainbox Talent & Innovation Services Logo" class="logo-img">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#services" class="nav-link" data-i18n="nav_services">Services</a></li>
+                    <li><a href="#industries" class="nav-link" data-i18n="nav_industries">Industries</a></li>
+                    <li><a href="#hiring-process" class="nav-link" data-i18n="hiring_title">Process</a></li>
+                    <li><a href="#leadership" class="nav-link" data-i18n="nav_leadership">Our Team</a></li>
+                    <li><a href="#job-portal" class="nav-link" data-i18n="nav_jobs">Jobs</a></li>
+                    <li><a href="#blog" class="nav-link" data-i18n="nav_blog">Insights</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions Controls (Theme/Language/Mobile Toggle) -->
+            <div class="header-actions">
+                <!-- Multi-Language Selector -->
+                <div class="language-dropdown">
+                    <button class="lang-btn" id="lang-toggle-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select Language">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span id="current-lang-code">EN</span>
+                        <span class="chevron-down">&darr;</span>
+                    </button>
+                    <ul class="lang-dropdown-menu" role="listbox" id="lang-listbox">
+                        <li role="option" data-lang="en" aria-selected="true" class="active">English</li>
+                        <li role="option" data-lang="nl" aria-selected="false">Nederlands</li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-expanded="false" aria-controls="main-header" aria-label="Toggle Menu">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <!-- Hero Section (Split Layout + 3D Interactive Canvas Brain) -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-split-container">
+                <!-- Left: Headline & Actions -->
+                <div class="hero-left-content">
+                    <h1 class="hero-title" data-i18n="hero_title">Making Hiring in Excellence an achievable standard</h1>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">Connecting businesses with top talent through staffing, recruitment, consulting, and workforce solutions.</p>
+                    
+                    <!-- Premium Action CTA Buttons -->
+                    <div class="hero-actions-row">
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_hire">Hire Talent</a>
+                        <a href="#job-portal" class="btn btn-secondary" data-i18n="hero_cta_jobs">Find Opportunities</a>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive 3D Brainbox Visual -->
+                <div class="hero-right-visual">
+                    <div class="brainbox-canvas-container" id="hero-interactive-trigger">
+                        <!-- Premium Interactive Talent-Matching Network Hub (Unified Core) -->
+                        <div class="talent-network-hub unified-core-layout" id="talent-network-hub">
+                            <!-- Visualization Area (Transparent and borderless) -->
+                            <div class="network-visualization borderless-viz">
+                                <!-- SVG for matching paths and rings -->
+                                <svg class="network-svg" id="network-svg" viewBox="0 0 400 360" preserveAspectRatio="xMidYMid meet">
+                                    <defs>
+                                        <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.25"/>
+                                            <stop offset="100%" stop-color="var(--primary)" stop-opacity="0"/>
+                                        </radialGradient>
+                                    </defs>
+                                    <!-- Dynamic matching path lines -->
+                                    <g id="network-paths"></g>
+                                </svg>
+
+                                <!-- Central matching engine hub -->
+                                <div class="node-engine-unified" id="node-engine">
+                                    <div class="engine-ring ring-outer"></div>
+                                    <div class="engine-ring ring-medium"></div>
+                                    <div class="engine-ring ring-inner"></div>
+                                    <div class="engine-core">
+                                        <span class="engine-icon">🧠</span>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Talent Nodes (Orbiting around center core) -->
+                                <div class="floating-talent-nodes" id="floating-talent-nodes">
+                                    <div class="network-node floating-node node-f1" data-node="t1" data-category="devops" data-name="Sven H.">
+                                        <div class="node-avatar">SH</div>
+                                        <span class="node-label">DevOps</span>
+                                    </div>
+                                    <div class="network-node floating-node node-f2" data-node="t2" data-category="devops" data-name="Ewout v.">
+                                        <div class="node-avatar">EV</div>
+                                        <span class="node-label">Cloud</span>
+                                    </div>
+                                    <div class="network-node floating-node node-f3" data-node="t3" data-category="software" data-name="Julia M.">
+                                        <div class="node-avatar">JM</div>
+                                        <span class="node-label">Fullstack</span>
+                                    </div>
+                                    <div class="network-node floating-node node-f4" data-node="t4" data-category="ai" data-name="Lars K.">
+                                        <div class="node-avatar">LK</div>
+                                        <span class="node-label">AI Sci</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom controls (Centered) -->
+                            <div class="network-controls-unified">
+                                <div class="filter-pills">
+                                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Roles</button>
+                                    <button class="filter-btn" data-filter="devops" data-i18n="filter_devops">Cloud/DevOps</button>
+                                    <button class="filter-btn" data-filter="software" data-i18n="filter_software">Software Eng</button>
+                                    <button class="filter-btn" data-filter="ai" data-i18n="filter_ai">AI/Data</button>
+                                </div>
+                                <button class="match-pulse-btn" id="simulate-match-btn">
+                                    <span class="match-pulse-icon">⚡</span>
+                                    <span data-i18n="btn_match">Match Talent</span>
+                                </button>
+                            </div>
+
+                            <!-- Reusable Glass Tooltip -->
+                            <div class="network-tooltip glass-panel" id="network-tooltip">
+                                <h5 class="tooltip-name">Candidate Name</h5>
+                                <p class="tooltip-role">Role Title</p>
+                                <div class="tooltip-stats">
+                                    <span class="tooltip-stat">Stat 1</span>
+                                    <span class="tooltip-stat">Stat 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+        </section>
+
+        <!-- Trusted Logos Marquee (Microsoft, Amazon, Google, IBM, Oracle, Meta) -->
+        <section class="logos-section">
+            <div class="container">
+                <p class="logos-title" data-i18n="trusted_by_title">TRUSTED BY LEADING COMPANIES</p>
+            </div>
+            <div class="marquee-container">
+                <!-- Track 1 -->
+                <div class="marquee-track">
+                    <!-- Microsoft Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 140 32" width="140" height="32" fill="currentColor">
+                            <rect x="0" y="4" width="11" height="11" fill="#F25022"/>
+                            <rect x="13" y="4" width="11" height="11" fill="#7FBA00"/>
+                            <rect x="0" y="17" width="11" height="11" fill="#00A4EF"/>
+                            <rect x="13" y="17" width="11" height="11" fill="#FFB900"/>
+                            <text x="32" y="24" font-family="'Segoe UI', 'Outfit', sans-serif" font-weight="600" font-size="18" letter-spacing="-0.5px">Microsoft</text>
+                        </svg>
+                    </div>
+                    <!-- Amazon Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 110 32" width="110" height="32" fill="currentColor">
+                            <text x="0" y="20" font-family="'Outfit', sans-serif" font-weight="800" font-size="20">amazon</text>
+                            <path d="M12 24 Q48 34 88 23" fill="none" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M88 23 L82 19 M88 23 L85 28" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <!-- Google Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 100 32" width="100" height="32" fill="currentColor">
+                            <text x="0" y="22" font-family="'Outfit', sans-serif" font-weight="700" font-size="23" letter-spacing="-1px">
+                                <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+                            </text>
+                        </svg>
+                    </div>
+                    <!-- IBM Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 90 32" width="90" height="32" fill="#006699">
+                            <text x="0" y="24" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" letter-spacing="-1px">IBM</text>
+                            <rect x="0" y="2" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="6" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="10" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="14" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="18" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="22" width="90" height="2" fill="var(--bg-main)"/>
+                        </svg>
+                    </div>
+                    <!-- Oracle Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 110 32" width="110" height="32" fill="#F80000">
+                            <text x="0" y="23" font-family="'Outfit', sans-serif" font-weight="800" font-size="20" letter-spacing="0.5px">ORACLE</text>
+                        </svg>
+                    </div>
+                    <!-- Meta Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 95 32" width="95" height="32" fill="currentColor">
+                            <path d="M12 21 C6 21 2 17 2 12 C2 7 6 3 12 3 C17 3 20 6 22 9 C24 6 27 3 32 3 C38 3 42 7 42 12 C42 17 38 21 32 21 C27 21 24 18 22 15 C20 18 17 21 12 21 Z" fill="none" stroke="#0081FB" stroke-width="3"/>
+                            <text x="50" y="22" font-family="'Outfit', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.5px">Meta</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="marquee-track">
+                    <!-- Microsoft Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 140 32" width="140" height="32" fill="currentColor">
+                            <rect x="0" y="4" width="11" height="11" fill="#F25022"/>
+                            <rect x="13" y="4" width="11" height="11" fill="#7FBA00"/>
+                            <rect x="0" y="17" width="11" height="11" fill="#00A4EF"/>
+                            <rect x="13" y="17" width="11" height="11" fill="#FFB900"/>
+                            <text x="32" y="24" font-family="'Segoe UI', 'Outfit', sans-serif" font-weight="600" font-size="18" letter-spacing="-0.5px">Microsoft</text>
+                        </svg>
+                    </div>
+                    <!-- Amazon Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 110 32" width="110" height="32" fill="currentColor">
+                            <text x="0" y="20" font-family="'Outfit', sans-serif" font-weight="800" font-size="20">amazon</text>
+                            <path d="M12 24 Q48 34 88 23" fill="none" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M88 23 L82 19 M88 23 L85 28" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <!-- Google Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 100 32" width="100" height="32" fill="currentColor">
+                            <text x="0" y="22" font-family="'Outfit', sans-serif" font-weight="700" font-size="23" letter-spacing="-1px">
+                                <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+                            </text>
+                        </svg>
+                    </div>
+                    <!-- IBM Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 90 32" width="90" height="32" fill="#006699">
+                            <text x="0" y="24" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" letter-spacing="-1px">IBM</text>
+                            <rect x="0" y="2" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="6" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="10" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="14" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="18" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="22" width="90" height="2" fill="var(--bg-main)"/>
+                        </svg>
+                    </div>
+                    <!-- Oracle Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 110 32" width="110" height="32" fill="#F80000">
+                            <text x="0" y="23" font-family="'Outfit', sans-serif" font-weight="800" font-size="20" letter-spacing="0.5px">ORACLE</text>
+                        </svg>
+                    </div>
+                    <!-- Meta Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 95 32" width="95" height="32" fill="currentColor">
+                            <path d="M12 21 C6 21 2 17 2 12 C2 7 6 3 12 3 C17 3 20 6 22 9 C24 6 27 3 32 3 C38 3 42 7 42 12 C42 17 38 21 32 21 C27 21 24 18 22 15 C20 18 17 21 12 21 Z" fill="none" stroke="#0081FB" stroke-width="3"/>
+                            <text x="50" y="22" font-family="'Outfit', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.5px">Meta</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="marquee-track">
+                    <!-- Microsoft Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 140 32" width="140" height="32" fill="currentColor">
+                            <rect x="0" y="4" width="11" height="11" fill="#F25022"/>
+                            <rect x="13" y="4" width="11" height="11" fill="#7FBA00"/>
+                            <rect x="0" y="17" width="11" height="11" fill="#00A4EF"/>
+                            <rect x="13" y="17" width="11" height="11" fill="#FFB900"/>
+                            <text x="32" y="24" font-family="'Segoe UI', 'Outfit', sans-serif" font-weight="600" font-size="18" letter-spacing="-0.5px">Microsoft</text>
+                        </svg>
+                    </div>
+                    <!-- Amazon Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 110 32" width="110" height="32" fill="currentColor">
+                            <text x="0" y="20" font-family="'Outfit', sans-serif" font-weight="800" font-size="20">amazon</text>
+                            <path d="M12 24 Q48 34 88 23" fill="none" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M88 23 L82 19 M88 23 L85 28" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <!-- Google Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 100 32" width="100" height="32" fill="currentColor">
+                            <text x="0" y="22" font-family="'Outfit', sans-serif" font-weight="700" font-size="23" letter-spacing="-1px">
+                                <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+                            </text>
+                        </svg>
+                    </div>
+                    <!-- IBM Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 90 32" width="90" height="32" fill="#006699">
+                            <text x="0" y="24" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" letter-spacing="-1px">IBM</text>
+                            <rect x="0" y="2" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="6" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="10" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="14" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="18" width="90" height="2" fill="var(--bg-main)"/>
+                            <rect x="0" y="22" width="90" height="2" fill="var(--bg-main)"/>
+                        </svg>
+                    </div>
+                    <!-- Oracle Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 110 32" width="110" height="32" fill="#F80000">
+                            <text x="0" y="23" font-family="'Outfit', sans-serif" font-weight="800" font-size="20" letter-spacing="0.5px">ORACLE</text>
+                        </svg>
+                    </div>
+                    <!-- Meta Logo -->
+                    <div class="partner-logo">
+                        <svg viewBox="0 0 95 32" width="95" height="32" fill="currentColor">
+                            <path d="M12 21 C6 21 2 17 2 12 C2 7 6 3 12 3 C17 3 20 6 22 9 C24 6 27 3 32 3 C38 3 42 7 42 12 C42 17 38 21 32 21 C27 21 24 18 22 15 C20 18 17 21 12 21 Z" fill="none" stroke="#0081FB" stroke-width="3"/>
+                            <text x="50" y="22" font-family="'Outfit', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.5px">Meta</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (6-Card Grid) -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="services_subtitle">EXPERT RECRUITMENT SERVICES</span>
+                    <h2 class="section-title" data-i18n="services_title">Tailored Staffing & Executive Search</h2>
+                    <p class="section-desc" data-i18n="services_desc">Aligning high-performance individuals with industry leaders through tailored methodologies.</p>
+                </div>
+
+                <div class="services-grid services-six-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card" tabindex="0">
+                        <div class="card-bg-number">01</div>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="#E67E22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="17" y1="8" x2="23" y2="8"></line>
+                                <line x1="20" y1="5" x2="20" y2="11"></line>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="service1_title">Contract Staffing</h3>
+                        <p class="service-card-text" data-i18n="service1_text">Scale your team with skilled professionals on demand.</p>
+                        <a href="#contact" class="service-link"><span data-i18n="service_cta">Inquire &rarr;</span></a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card" tabindex="0">
+                        <div class="card-bg-number">02</div>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="#E67E22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="service2_title">Permanent Hiring</h3>
+                        <p class="service-card-text" data-i18n="service2_text">Find the right talent for long-term success.</p>
+                        <a href="#job-portal" class="service-link"><span data-i18n="service_browse_jobs">Browse Jobs &rarr;</span></a>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card" tabindex="0">
+                        <div class="card-bg-number">03</div>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="#E67E22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="service3_title">Contract-to-Hire</h3>
+                        <p class="service-card-text" data-i18n="service3_text">Evaluate talent before making a long-term commitment.</p>
+                        <a href="#contact" class="service-link"><span data-i18n="service_cta">Inquire &rarr;</span></a>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card" tabindex="0">
+                        <div class="card-bg-number">04</div>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="#E67E22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4"></circle>
+                                <path d="M18 21a6 6 0 0 0-12 0"></path>
+                                <polyline points="12 2 12 4"></polyline>
+                                <polyline points="12 12 12 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="service4_title">Executive Search</h3>
+                        <p class="service-card-text" data-i18n="service4_text">We find leaders who drive vision and transformation.</p>
+                        <a href="#contact" class="service-link"><span data-i18n="service_cta">Inquire &rarr;</span></a>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card" tabindex="0">
+                        <div class="card-bg-number">05</div>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="#E67E22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="service5_title">Workforce Solutions</h3>
+                        <p class="service-card-text" data-i18n="service5_text">End-to-end solutions for a future-ready workforce.</p>
+                        <a href="#contact" class="service-link"><span data-i18n="service_cta">Inquire &rarr;</span></a>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-card" tabindex="0">
+                        <div class="card-bg-number">06</div>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="#E67E22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="service6_title">Training & Development</h3>
+                        <p class="service-card-text" data-i18n="service6_text">Uplift your workforce. Empower the future.</p>
+                        <a href="#contact" class="service-link"><span data-i18n="service_cta">Inquire &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Industries Served (6 Industries served) -->
+        <section class="industries-section" id="industries">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="industries_subtitle">OUR RECRUITMENT DOMAINS</span>
+                    <h2 class="section-title" data-i18n="industries_title">Industries We Serve</h2>
+                    <p class="section-desc" data-i18n="industries_desc">Providing wervingsexpertise across highly complex enterprise sectors through dedicated specialist teams.</p>
+                </div>
+
+                <div class="expertise-grid">
+                    <!-- Card 1: Embedded -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">01</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                    <rect x="9" y="9" width="6" height="6"></rect>
+                                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                                    <line x1="20" y1="15" x2="23" y2="15"></line>
+                                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                                    <line x1="1" y1="15" x2="4" y2="15"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_embedded">Embedded Systems Developers</h3>
+                    </div>
+
+                    <!-- Card 2: IoT -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">02</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                    <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                                    <line x1="17" y1="12" x2="22.95" y2="12"></line>
+                                    <line x1="12" y1="1.05" x2="12" y2="7"></line>
+                                    <line x1="12" y1="17" x2="12" y2="22.95"></line>
+                                    <line x1="4.25" y1="4.25" x2="8.5" y2="8.5"></line>
+                                    <line x1="15.5" y1="15.5" x2="19.75" y2="19.75"></line>
+                                    <line x1="19.75" y1="4.25" x2="15.5" y2="8.5"></line>
+                                    <line x1="8.5" y1="15.5" x2="4.25" y2="19.75"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_iot">High Tech (IoT)</h3>
+                    </div>
+
+                    <!-- Card 3: Software Testing -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">03</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_testing">Software Testing</h3>
+                    </div>
+
+                    <!-- Card 4: DevOps -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">04</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_devops">DevOps Engineers</h3>
+                    </div>
+
+                    <!-- Card 5: Application Consultants -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">05</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_app_cons">Application Consultants</h3>
+                    </div>
+
+                    <!-- Card 6: ERP Consultants -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">06</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                    <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_erp">ERP Consultants</h3>
+                    </div>
+
+                    <!-- Card 7: Project Managers -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">07</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_pm">Project & Program Managers</h3>
+                    </div>
+
+                    <!-- Card 8: Industrial Automation -->
+                    <div class="expertise-card glass-panel" tabindex="0">
+                        <div class="card-header-row">
+                            <span class="card-number">08</span>
+                            <div class="expertise-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="expertise-card-title" data-i18n="role_automation">Industrial Automation Engineers</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Hiring Process -->
+        <section class="hiring-process-section" id="hiring-process">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="hiring_subtitle">OUR SYSTEMATIC APPROACH</span>
+                    <h2 class="section-title" data-i18n="hiring_title">Our Hiring Process</h2>
+                </div>
+                
+                <div class="hiring-timeline-wrapper">
+                    <!-- The Winding Wavy Road Map SVG Track -->
+                    <div class="roadmap-track-container">
+                        <svg class="roadmap-svg" viewBox="0 0 200 1000" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="roadmap-grad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#E67E22" />
+                                    <stop offset="100%" stop-color="#F39C12" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Background track line -->
+                            <path class="roadmap-road-bg" d="M 100,100 C 30,150 30,250 100,300 C 170,350 170,450 100,500 C 30,550 30,650 100,700 C 170,750 170,850 100,900" fill="none" />
+                            <!-- Active animated flowing path -->
+                            <path class="roadmap-road-fill" d="M 100,100 C 30,150 30,250 100,300 C 170,350 170,450 100,500 C 30,550 30,650 100,700 C 170,750 170,850 100,900" fill="none" />
+                        </svg>
+                    </div>
+
+                    <div class="roadmap-grid">
+                        <!-- Step 1 -->
+                        <div class="roadmap-step roadmap-step-left" data-step="1">
+                            <!-- Card -->
+                            <div class="roadmap-card-col">
+                                <div class="roadmap-card" tabindex="0">
+                                    <div class="roadmap-card-header">
+                                        <span class="roadmap-phase">PHASE 01</span>
+                                        <span class="roadmap-time" data-i18n="step1_time">Days 1 - 3</span>
+                                    </div>
+                                    <div class="roadmap-card-title-row">
+                                        <div class="roadmap-icon-box">
+                                            <svg class="step-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                        </div>
+                                        <h3 class="step-title" data-i18n="step1_title">Talent Sourcing</h3>
+                                    </div>
+                                    <p class="step-desc" data-i18n="step1_desc">We identify and engage high-potential passive candidates through our global tech network and premium sourcing channels.</p>
+                                    
+                                    <div class="roadmap-details">
+                                        <span class="details-heading">Key Activities:</span>
+                                        <ul class="roadmap-activities">
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step1_act1">Multi-channel search (LinkedIn, GitHub, Stack Overflow)</span></li>
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step1_act2">Deep-tech community talent mapping</span></li>
+                                        </ul>
+                                        <div class="roadmap-milestone">
+                                            <strong>Milestone:</strong> <span data-i18n="step1_milestone">Qualified Candidate Pool Assembled</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Node -->
+                            <div class="roadmap-node-col">
+                                <div class="roadmap-node">
+                                    <span class="node-num">1</span>
+                                    <span class="node-pulse"></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Spacer -->
+                            <div class="roadmap-spacer-col"></div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="roadmap-step roadmap-step-right" data-step="2">
+                            <!-- Spacer -->
+                            <div class="roadmap-spacer-col"></div>
+                            
+                            <!-- Node -->
+                            <div class="roadmap-node-col">
+                                <div class="roadmap-node">
+                                    <span class="node-num">2</span>
+                                    <span class="node-pulse"></span>
+                                </div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="roadmap-card-col">
+                                <div class="roadmap-card" tabindex="0">
+                                    <div class="roadmap-card-header">
+                                        <span class="roadmap-phase">PHASE 02</span>
+                                        <span class="roadmap-time" data-i18n="step2_time">Days 4 - 6</span>
+                                    </div>
+                                    <div class="roadmap-card-title-row">
+                                        <div class="roadmap-icon-box">
+                                            <svg class="step-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                                            </svg>
+                                        </div>
+                                        <h3 class="step-title" data-i18n="step2_title">Screening & Shortlisting</h3>
+                                    </div>
+                                    <p class="step-desc" data-i18n="step2_desc">A rigorous filter stage checking core tech stack competencies, soft skill dynamics, culture fit, and career goals.</p>
+                                    
+                                    <div class="roadmap-details">
+                                        <span class="details-heading">Key Activities:</span>
+                                        <ul class="roadmap-activities">
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step2_act1">In-depth recruiter pre-screening interview</span></li>
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step2_act2">Branding and motivation alignment check</span></li>
+                                        </ul>
+                                        <div class="roadmap-milestone">
+                                            <strong>Milestone:</strong> <span data-i18n="step2_milestone">Approved Longlist of Verified Talents</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="roadmap-step roadmap-step-left" data-step="3">
+                            <!-- Card -->
+                            <div class="roadmap-card-col">
+                                <div class="roadmap-card" tabindex="0">
+                                    <div class="roadmap-card-header">
+                                        <span class="roadmap-phase">PHASE 03</span>
+                                        <span class="roadmap-time" data-i18n="step3_time">Days 7 - 10</span>
+                                    </div>
+                                    <div class="roadmap-card-title-row">
+                                        <div class="roadmap-icon-box">
+                                            <svg class="step-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                                <path d="M9 14l2 2 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="step-title" data-i18n="step3_title">Interview & Assessment</h3>
+                                    </div>
+                                    <p class="step-desc" data-i18n="step3_desc">Candidates undergo structured technical evaluations, code challenges, and expert assessments conducted by veteran tech leads.</p>
+                                    
+                                    <div class="roadmap-details">
+                                        <span class="details-heading">Key Activities:</span>
+                                        <ul class="roadmap-activities">
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step3_act1">Specialist coding peer audits and case studies</span></li>
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step3_act2">Consolidated scoring reports & video profiles</span></li>
+                                        </ul>
+                                        <div class="roadmap-milestone">
+                                            <strong>Milestone:</strong> <span data-i18n="step3_milestone">Peer-Vetted Shortlist & Assessment Dossiers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Node -->
+                            <div class="roadmap-node-col">
+                                <div class="roadmap-node">
+                                    <span class="node-num">3</span>
+                                    <span class="node-pulse"></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Spacer -->
+                            <div class="roadmap-spacer-col"></div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="roadmap-step roadmap-step-right" data-step="4">
+                            <!-- Spacer -->
+                            <div class="roadmap-spacer-col"></div>
+                            
+                            <!-- Node -->
+                            <div class="roadmap-node-col">
+                                <div class="roadmap-node">
+                                    <span class="node-num">4</span>
+                                    <span class="node-pulse"></span>
+                                </div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="roadmap-card-col">
+                                <div class="roadmap-card" tabindex="0">
+                                    <div class="roadmap-card-header">
+                                        <span class="roadmap-phase">PHASE 04</span>
+                                        <span class="roadmap-time" data-i18n="step4_time">Days 11 - 13</span>
+                                    </div>
+                                    <div class="roadmap-card-title-row">
+                                        <div class="roadmap-icon-box">
+                                            <svg class="step-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="8" r="7"></circle>
+                                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                            </svg>
+                                        </div>
+                                        <h3 class="step-title" data-i18n="step4_title">Selection & Offer</h3>
+                                    </div>
+                                    <p class="step-desc" data-i18n="step4_desc">Final selection round with stakeholders, followed by reference checks, salary benchmarking guidance, and formal contract offers.</p>
+                                    
+                                    <div class="roadmap-details">
+                                        <span class="details-heading">Key Activities:</span>
+                                        <ul class="roadmap-activities">
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step4_act1">Consolidated review and interview debriefs</span></li>
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step4_act2">Salary negotiations, compliance check, contract draft</span></li>
+                                        </ul>
+                                        <div class="roadmap-milestone">
+                                            <strong>Milestone:</strong> <span data-i18n="step4_milestone">Offer Letter Extended & Accepted</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="roadmap-step roadmap-step-left" data-step="5">
+                            <!-- Card -->
+                            <div class="roadmap-card-col">
+                                <div class="roadmap-card" tabindex="0">
+                                    <div class="roadmap-card-header">
+                                        <span class="roadmap-phase">PHASE 05</span>
+                                        <span class="roadmap-time" data-i18n="step5_time">Day 14+</span>
+                                    </div>
+                                    <div class="roadmap-card-title-row">
+                                        <div class="roadmap-icon-box">
+                                            <svg class="step-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M21 2c-2 2-9 4-12 7l-2 2 3 3 2-2c3-3 5-10 7-12z"></path>
+                                                <path d="M9 11l-3 3v3l-2 2h3l3-2h3l-4-4z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="step-title" data-i18n="step5_title">Onboarding & Support</h3>
+                                    </div>
+                                    <p class="step-desc" data-i18n="step5_desc">Seamless onboarding transition supported by our HR teams, followed by scheduled check-ins to guarantee long-term retention.</p>
+                                    
+                                    <div class="roadmap-details">
+                                        <span class="details-heading">Key Activities:</span>
+                                        <ul class="roadmap-activities">
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step5_act1">First day IT/compliance check-ins</span></li>
+                                            <li><span class="bullet-dot"></span> <span data-i18n="step5_act2">30, 60, and 90-day progress checkups</span></li>
+                                        </ul>
+                                        <div class="roadmap-milestone">
+                                            <strong>Milestone:</strong> <span data-i18n="step5_milestone">Candidate Fully Integrated & Performing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Node -->
+                            <div class="roadmap-node-col">
+                                <div class="roadmap-node">
+                                    <span class="node-num">5</span>
+                                    <span class="node-pulse"></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Spacer -->
+                            <div class="roadmap-spacer-col"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- What Our Clients Say (Testimonials Grid) -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="testimonials_subtitle">WHAT CLIENTS SAY</span>
+                    <h2 class="section-title" data-i18n="testimonials_title">What Our Clients Say</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass-panel" tabindex="0">
+                        <div class="testimonial-logo-wrapper">
+                            <svg viewBox="0 0 120 32" width="100" height="26" fill="currentColor">
+                                <rect x="0" y="4" width="8" height="8" fill="#F25022"/>
+                                <rect x="10" y="4" width="8" height="8" fill="#7FBA00"/>
+                                <rect x="0" y="14" width="8" height="8" fill="#00A4EF"/>
+                                <rect x="10" y="14" width="8" height="8" fill="#FFB900"/>
+                                <text x="24" y="20" font-family="'Outfit', sans-serif" font-weight="700" font-size="14">TechSolutions</text>
+                            </svg>
+                        </div>
+                        <blockquote class="t-quote" data-i18n="t1_quote">"Brainbox Consulting has been instrumental in helping us find top talent quickly. Their team understands our needs perfectly."</blockquote>
+                        <div class="t-profile">
+                            <strong class="t-name">Robert Anderson</strong>
+                            <span class="t-pos">CTO, TechSolutions</span>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass-panel" tabindex="0">
+                        <div class="testimonial-logo-wrapper">
+                            <svg viewBox="0 0 120 32" width="100" height="26" fill="currentColor">
+                                <text x="0" y="20" font-family="'Outfit', sans-serif" font-weight="800" font-size="16" fill="currentColor">FIN</text>
+                                <text x="28" y="20" font-family="'Outfit', sans-serif" font-weight="300" font-size="16" fill="#E67E22">BANK</text>
+                            </svg>
+                        </div>
+                        <blockquote class="t-quote" data-i18n="t2_quote">"Their professionalism and commitment to quality are unparalleled. Highly recommended!"</blockquote>
+                        <div class="t-profile">
+                            <strong class="t-name">Jessica Lee</strong>
+                            <span class="t-pos">HR Director, FinBank</span>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card glass-panel" tabindex="0">
+                        <div class="testimonial-logo-wrapper">
+                            <svg viewBox="0 0 120 32" width="100" height="26" fill="currentColor">
+                                <text x="0" y="20" font-family="'Outfit', sans-serif" font-weight="800" font-size="16">RetailCorp</text>
+                                <line x1="82" y1="16" x2="95" y2="16" stroke="#E67E22" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <blockquote class="t-quote" data-i18n="t3_quote">"A reliable partner for all our staffing needs. Exceptional service every time."</blockquote>
+                        <div class="t-profile">
+                            <strong class="t-name">Daniel Martinez</strong>
+                            <span class="t-pos">Operations Head, RetailCorp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team (5 Members Grid) -->
+        <section class="leadership-section" id="leadership">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="team_subtitle">OUR TEAM MEMBERS</span>
+                    <h2 class="section-title" data-i18n="team_title">Brainbox Consulting Team Members</h2>
+                    <p class="section-desc" data-i18n="team_desc">Experienced professionals coordinating recruitment strategies for premier enterprise accounts.</p>
+                </div>
+
+                <!-- Interactive Accordion Viewport -->
+                <div class="team-accordion-wrapper">
+                    <div class="team-accordion">
+                        <!-- Card 1 -->
+                        <div class="team-accordion-item active" data-index="0" tabindex="0">
+                            <img src="assets/team_ceo.png" alt="Jan-Willem de Boer" class="team-accordion-img">
+                            <div class="team-accordion-overlay"></div>
+                            <div class="team-accordion-collapsed-label">Jan-Willem de Boer</div>
+                            <div class="team-accordion-content">
+                                <span class="team-accordion-role" data-i18n="team_ceo_pos">Founder & Managing Director</span>
+                                <h3 class="team-accordion-name">Jan-Willem de Boer</h3>
+                                <div class="team-accordion-tags">
+                                    <span class="team-accordion-tag" data-i18n="team_ceo_tag1">Strategy</span>
+                                    <span class="team-accordion-tag" data-i18n="team_ceo_tag2">Headhunting</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="team-accordion-item" data-index="1" tabindex="0">
+                            <img src="assets/team_coo.png" alt="Michael Brown" class="team-accordion-img">
+                            <div class="team-accordion-overlay"></div>
+                            <div class="team-accordion-collapsed-label">Michael Brown</div>
+                            <div class="team-accordion-content">
+                                <span class="team-accordion-role" data-i18n="team_coo_pos">Partner, Tech & Interim Services</span>
+                                <h3 class="team-accordion-name">Michael Brown</h3>
+                                <div class="team-accordion-tags">
+                                    <span class="team-accordion-tag" data-i18n="team_coo_tag1">Interim Ops</span>
+                                    <span class="team-accordion-tag" data-i18n="team_coo_tag2">Tech Scaling</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="team-accordion-item" data-index="2" tabindex="0">
+                            <img src="assets/team_cto.png" alt="Sarah Johnson" class="team-accordion-img">
+                            <div class="team-accordion-overlay"></div>
+                            <div class="team-accordion-collapsed-label">Sarah Johnson</div>
+                            <div class="team-accordion-content">
+                                <span class="team-accordion-role" data-i18n="team_cto_pos">Chief Technology Officer (CTO)</span>
+                                <h3 class="team-accordion-name">Sarah Johnson</h3>
+                                <div class="team-accordion-tags">
+                                    <span class="team-accordion-tag" data-i18n="team_cto_tag1">Vetting Systems</span>
+                                    <span class="team-accordion-tag" data-i18n="team_cto_tag2">AI Pipelines</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="team-accordion-item" data-index="3" tabindex="0">
+                            <img src="assets/team_director.png" alt="David Wilson" class="team-accordion-img">
+                            <div class="team-accordion-overlay"></div>
+                            <div class="team-accordion-collapsed-label">David Wilson</div>
+                            <div class="team-accordion-content">
+                                <span class="team-accordion-role" data-i18n="team_director_pos">Director of Enterprise Relations</span>
+                                <h3 class="team-accordion-name">David Wilson</h3>
+                                <div class="team-accordion-tags">
+                                    <span class="team-accordion-tag" data-i18n="team_director_tag1">Enterprise Accounts</span>
+                                    <span class="team-accordion-tag" data-i18n="team_director_tag2">RPO Programs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="team-accordion-item" data-index="4" tabindex="0">
+                            <img src="assets/team_hr.png" alt="Emily Davis" class="team-accordion-img">
+                            <div class="team-accordion-overlay"></div>
+                            <div class="team-accordion-collapsed-label">Emily Davis</div>
+                            <div class="team-accordion-content">
+                                <span class="team-accordion-role" data-i18n="team_hr_pos">Head of People</span>
+                                <h3 class="team-accordion-name">Emily Davis</h3>
+                                <div class="team-accordion-tags">
+                                    <span class="team-accordion-tag" data-i18n="team_hr_tag1">People Culture</span>
+                                    <span class="team-accordion-tag" data-i18n="team_hr_tag2">Compliance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detail Panels -->
+                <div class="team-details-container">
+                    <!-- Leader 1 Detail -->
+                    <div class="team-details-panel active" data-index="0">
+                        <div class="panel-header">
+                            <h3 class="team-name">Jan-Willem de Boer</h3>
+                            <p class="team-position" data-i18n="team_ceo_pos">Founder & Managing Director</p>
+                            <div class="team-tags">
+                                <span class="team-tag" data-i18n="team_ceo_tag1">Strategy</span>
+                                <span class="team-tag" data-i18n="team_ceo_tag2">Headhunting</span>
+                            </div>
+                        </div>
+                        <p class="team-bio" data-i18n="team_ceo_bio">Over 20 years in executive headhunting and organizational consulting. Inspired to connect strategic thinkers with enterprise builders.</p>
+                        <blockquote class="team-quote" data-i18n="team_ceo_quote">"Sourcing leaders is about connecting vision with action."</blockquote>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Leader 2 Detail -->
+                    <div class="team-details-panel" data-index="1">
+                        <div class="panel-header">
+                            <h3 class="team-name">Michael Brown</h3>
+                            <p class="team-position" data-i18n="team_coo_pos">Partner, Tech & Interim Services</p>
+                            <div class="team-tags">
+                                <span class="team-tag" data-i18n="team_coo_tag1">Interim Ops</span>
+                                <span class="team-tag" data-i18n="team_coo_tag2">Tech Scaling</span>
+                            </div>
+                        </div>
+                        <p class="team-bio" data-i18n="team_coo_bio">Leads tech placement divisions. Expert in interim management systems and scaling agile tech startups to enterprise size.</p>
+                        <blockquote class="team-quote" data-i18n="team_coo_quote">"Interim management demands immediate clarity in complexity."</blockquote>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Leader 3 Detail -->
+                    <div class="team-details-panel" data-index="2">
+                        <div class="panel-header">
+                            <h3 class="team-name">Sarah Johnson</h3>
+                            <p class="team-position" data-i18n="team_cto_pos">Chief Technology Officer (CTO)</p>
+                            <div class="team-tags">
+                                <span class="team-tag" data-i18n="team_cto_tag1">Vetting Systems</span>
+                                <span class="team-tag" data-i18n="team_cto_tag2">AI Pipelines</span>
+                            </div>
+                        </div>
+                        <p class="team-bio" data-i18n="team_cto_bio">Over 15 years developing deep-tech software architecture. Sarah coordinates our tech placement vetting and AI wervingspipelines.</p>
+                        <blockquote class="team-quote" data-i18n="team_cto_quote">"Our tech vetting ensures skills are verified by active engineers."</blockquote>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Leader 4 Detail -->
+                    <div class="team-details-panel" data-index="3">
+                        <div class="panel-header">
+                            <h3 class="team-name">David Wilson</h3>
+                            <p class="team-position" data-i18n="team_director_pos">Director of Enterprise Relations</p>
+                            <div class="team-tags">
+                                <span class="team-tag" data-i18n="team_director_tag1">Enterprise Accounts</span>
+                                <span class="team-tag" data-i18n="team_director_tag2">RPO Programs</span>
+                            </div>
+                        </div>
+                        <p class="team-bio" data-i18n="team_director_bio">Handles global corporate accounts and coordinates high-volume RPO service programs across key EU and US regions.</p>
+                        <blockquote class="team-quote" data-i18n="team_director_quote">"Long-term corporate partnerships are built on metric-proven trust."</blockquote>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Leader 5 Detail -->
+                    <div class="team-details-panel" data-index="4">
+                        <div class="panel-header">
+                            <h3 class="team-name">Emily Davis</h3>
+                            <p class="team-position" data-i18n="team_hr_pos">Head of People</p>
+                            <div class="team-tags">
+                                <span class="team-tag" data-i18n="team_hr_tag1">People Culture</span>
+                                <span class="team-tag" data-i18n="team_hr_tag2">Compliance</span>
+                            </div>
+                        </div>
+                        <p class="team-bio" data-i18n="team_hr_bio">Manages our internal culture, compliance auditing, and strategic onboarding support for key corporate placements.</p>
+                        <blockquote class="team-quote" data-i18n="team_hr_quote">"Successful onboarding is where candidate potential meets organizational culture."</blockquote>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Portal (Split-Pane Redesign) -->
+        <section class="job-portal-section" id="job-portal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="jobs_subtitle">ACTIVE RECRUITMENTS</span>
+                    <h2 class="section-title" data-i18n="jobs_title">Explore Career Opportunities</h2>
+                    <p class="section-desc" data-i18n="jobs_desc">Search and apply to senior-level and specialist placements globally.</p>
+                </div>
+
+                <div class="portal-split-view">
+                    <!-- Left Column: Search Filters & Listings Stack -->
+                    <div class="portal-list-pane">
+                        <div class="search-filter-mini-header glass-panel">
+                            <div class="mini-search-row">
+                                <input type="text" id="sidebar-search" placeholder="Search keywords..." data-i18n-attr="placeholder:filter_search_ph">
+                                <select id="sort-jobs">
+                                    <option value="recent" data-i18n="sort_recent">Recent</option>
+                                    <option value="salary-high" data-i18n="sort_salary_high">$$ High</option>
+                                    <option value="salary-low" data-i18n="sort_salary_low">$$ Low</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Toggle Drawer filters trigger button -->
+                            <button class="btn btn-secondary btn-sm btn-block" id="mobile-filter-trigger" style="margin-top:12px;" data-i18n="filters_title">Filter Positions</button>
+                            
+                            <!-- Hidden Filters Drawer -->
+                            <div class="collapsible-filters" id="collapsible-filters-box">
+                                <div class="filter-drawer-header">
+                                    <h4 data-i18n="filters_title">Filter Positions</h4>
+                                    <button class="btn-text" id="clear-filters-btn" data-i18n="clear_filters">Clear All</button>
+                                </div>
+                                <div class="filter-columns">
+                                    <div class="filter-drawer-col">
+                                        <span class="col-head" data-i18n="filter_dept_lbl">Department</span>
+                                        <label class="check-container"><input type="checkbox" name="department" value="technology"><span class="checkmark"></span>Tech & AI</label>
+                                        <label class="check-container"><input type="checkbox" name="department" value="finance"><span class="checkmark"></span>Finance</label>
+                                        <label class="check-container"><input type="checkbox" name="department" value="energy"><span class="checkmark"></span>Energy</label>
+                                        <label class="check-container"><input type="checkbox" name="department" value="healthcare"><span class="checkmark"></span>Healthcare</label>
+                                    </div>
+                                    <div class="filter-drawer-col">
+                                        <span class="col-head" data-i18n="filter_loc_lbl">Location</span>
+                                        <label class="check-container"><input type="checkbox" name="location" value="amsterdam"><span class="checkmark"></span>Amsterdam</label>
+                                        <label class="check-container"><input type="checkbox" name="location" value="rotterdam"><span class="checkmark"></span>Rotterdam</label>
+                                        <label class="check-container"><input type="checkbox" name="location" value="utrecht"><span class="checkmark"></span>Utrecht</label>
+                                        <label class="check-container"><input type="checkbox" name="location" value="remote"><span class="checkmark"></span>Remote</label>
+                                    </div>
+                                    <div class="filter-drawer-col">
+                                        <span class="col-head" data-i18n="filter_type_lbl">Contract</span>
+                                        <label class="check-container"><input type="checkbox" name="type" value="permanent"><span class="checkmark"></span>Permanent</label>
+                                        <label class="check-container"><input type="checkbox" name="type" value="interim"><span class="checkmark"></span>Interim</label>
+                                        <label class="check-container"><input type="checkbox" name="type" value="contract"><span class="checkmark"></span>Contract</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jobs Found Count Indicator -->
+                        <div class="list-meta-row">
+                            <span class="jobs-found"><strong id="jobs-count">0</strong> <span data-i18n="positions_found">positions available</span></span>
+                        </div>
+
+                        <!-- Dynamic jobs stack -->
+                        <div class="jobs-list" id="jobs-list-container">
+                            <!-- JS Generated Cards -->
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Sticky Detailed Viewport -->
+                    <div class="portal-detail-pane glass-panel" id="sticky-detail-pane">
+                        <div class="job-detail-viewport" id="job-detail-viewport">
+                            <div class="detail-placeholder">
+                                <div class="placeholder-icon">📋</div>
+                                <h3 data-i18n="ai_idle_title">Select a Position</h3>
+                                <p data-i18n="ai_idle_desc">Select any open recruitment card on the left to inspect professional details, capabilities checklist, and benefits structure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blogs and News Section (4 Cards Grid) -->
+        <section class="blog-section" id="blog">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title" data-i18n="blog_subtitle">BRAINBOX INSIGHTS</span>
+                    <h2 class="section-title" data-i18n="blog_title">Recruitment News & Strategy</h2>
+                    <p class="section-desc" data-i18n="blog_desc">Insightful analyses of executive wervingsmarkten and staffing strategy.</p>
+                </div>
+
+                <div class="blog-grid blog-four-grid">
+                    <!-- Article 1 -->
+                    <article class="blog-card">
+                        <div class="blog-image-wrapper">
+                            <img src="assets/blog_workforce.png" alt="Futuristic workspace cover" class="blog-img">
+                            <span class="blog-category" data-i18n="cat_recruitment">Recruitment</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">June 22, 2026</span>
+                                <span class="blog-read-time" data-i18n="read_5m">5 min read</span>
+                            </div>
+                            <h3 class="blog-card-title"><a href="#" data-i18n="blog1_title">Future of Work: Trends Shaping the Workforce</a></h3>
+                            <p class="blog-card-text" data-i18n="blog1_text">Discover how hybrid spaces, automation, and fractional leadership structures will shape the hiring decisions of global enterprises.</p>
+                            <a href="#" class="blog-link" data-i18n="read_article">Read Article &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="blog-card">
+                        <div class="blog-image-wrapper">
+                            <img src="assets/blog_recruitment_trends.png" alt="Corporate meeting room representing trends" class="blog-img">
+                            <span class="blog-category" data-i18n="cat_recruitment">Recruitment</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">June 18, 2026</span>
+                                <span class="blog-read-time" data-i18n="read_5m">5 min read</span>
+                            </div>
+                            <h3 class="blog-card-title"><a href="#" data-i18n="blog2_title">Why IT Staffing is Crucial for Business Growth</a></h3>
+                            <p class="blog-card-text" data-i18n="blog2_text">Scaling technology units requires specialized recruiters who understand software architecture and data pipelines.</p>
+                            <a href="#" class="blog-link" data-i18n="read_article">Read Article &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="blog-card">
+                        <div class="blog-image-wrapper">
+                            <img src="assets/blog_ai_staffing.png" alt="Abstract AI and humans connection" class="blog-img">
+                            <span class="blog-category" data-i18n="cat_technology">Technology</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">June 12, 2026</span>
+                                <span class="blog-read-time" data-i18n="read_8m">8 min read</span>
+                            </div>
+                            <h3 class="blog-card-title"><a href="#" data-i18n="blog3_title">Top Skills Employers Will Look for in 2026</a></h3>
+                            <p class="blog-card-text" data-i18n="blog3_text">From AI systems engineering to regulatory compliance, find out which skillsets are experiencing massive market demand.</p>
+                            <a href="#" class="blog-link" data-i18n="read_article">Read Article &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="blog-card">
+                        <div class="blog-image-wrapper">
+                            <img src="assets/blog_interim_talent.png" alt="Business handshake in modern glass building" class="blog-img">
+                            <span class="blog-category" data-i18n="cat_leadership">Leadership</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">May 28, 2026</span>
+                                <span class="blog-read-time" data-i18n="read_6m">6 min read</span>
+                            </div>
+                            <h3 class="blog-card-title"><a href="#" data-i18n="blog4_title">Building High-Performance Teams: Best Practices</a></h3>
+                            <p class="blog-card-text" data-i18n="blog4_text">A guide to establishing collaborative trust, engineering velocity, and solid recruitment standards for modern tech organizations.</p>
+                            <a href="#" class="blog-link" data-i18n="read_article">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form Side -->
+                    <div class="contact-form-wrapper glass-panel">
+                        <h2 class="section-title" data-i18n="contact_title">Get in Touch</h2>
+                        <p class="contact-intro-text" data-i18n="contact_intro">Fill out the brief form below, and our werving team will reach out to you within 24 hours.</p>
+                        
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name" data-i18n="form_name">Full Name</label>
+                                    <input type="text" id="contact-name" required placeholder="John Doe" data-i18n-attr="placeholder:form_name_ph">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email" data-i18n="form_email">Corporate Email</label>
+                                    <input type="email" id="contact-email" required placeholder="john@company.com" data-i18n-attr="placeholder:form_email_ph">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-company" data-i18n="form_company">Organization / Company</label>
+                                <input type="text" id="contact-company" placeholder="e.g. Apex Systems" data-i18n-attr="placeholder:form_company_ph">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-interest" data-i18n="form_interest">Service of Interest</label>
+                                <select id="contact-interest">
+                                    <option value="executive-search" data-i18n="opt_exec">Executive Search</option>
+                                    <option value="interim-management" data-i18n="opt_interim">Interim Management</option>
+                                    <option value="permanent-placement" data-i18n="opt_permanent">Permanent Placement</option>
+                                    <option value="rpo" data-i18n="opt_rpo">RPO Services</option>
+                                    <option value="career-opportunity" data-i18n="opt_career">Career Search / Candidate Query</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message" data-i18n="form_message">Project Details / Message</label>
+                                <textarea id="contact-message" rows="5" required placeholder="Tell us about your staffing requirements..." data-i18n-attr="placeholder:form_message_ph"></textarea>
+                            </div>
+
+                            <!-- GDPR Consent -->
+                            <div class="form-group checkbox-group">
+                                <label class="check-container">
+                                    <input type="checkbox" id="contact-gdpr" required>
+                                    <span class="checkmark"></span>
+                                    <span class="gdpr-text" data-i18n="form_gdpr">I consent to Brainbox Staffing processing my details in accordance with GDPR privacy policies.</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit_btn">Submit Inquiry</button>
+                        </form>
+
+                        <!-- Toast Success popup -->
+                        <div class="form-success-banner" id="form-success-banner" style="display:none;" role="alert">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <div class="banner-text">
+                                <strong data-i18n="success_banner_title">Thank you!</strong>
+                                <p data-i18n="success_banner_desc">Your werving inquiry has been successfully sent. A Brainbox representative will call you shortly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details & Map Side -->
+                    <div class="contact-details-side">
+                        <div class="contact-card glass-panel">
+                            <h3 class="contact-card-title" data-i18n="hq_title">Amsterdam Headquarters</h3>
+                            
+                            <div class="info-items">
+                                <!-- Address -->
+                                <div class="info-item">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="#E67E22" stroke-width="2" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <span>Keizersgracht 241, 1016 ED Amsterdam, Netherlands</span>
+                                </div>
+                                <!-- Phone -->
+                                <div class="info-item">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="#E67E22" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    <span>+31 (0)20 782 9188</span>
+                                </div>
+                                <!-- Email -->
+                                <div class="info-item">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="#E67E22" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    <span>info@brainboxstaffing.nl</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leaflet Map Container -->
+                        <div class="map-wrapper glass-panel">
+                            <div id="contact-map" class="contact-map" role="application" aria-label="Interactive Map of Headquarters Location"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Slide-Out Drawers -->
+    <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+
+    <!-- Drawer 1: Elite Interim Talent Panel -->
+    <aside class="slide-drawer" id="talent-drawer" aria-label="Elite Interim Leaders Drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <h3 data-i18n="nav_leadership">Elite Interim Leaders</h3>
+            <button class="close-drawer-btn" id="close-talent-drawer" aria-label="Close Panel">&times;</button>
+        </div>
+        <div class="drawer-body" id="talent-drawer-body">
+            <!-- Dynamic Candidate Cards -->
+        </div>
+    </aside>
+
+    <!-- Drawer 2: Salary Benchmark Analytics Panel -->
+    <aside class="slide-drawer" id="salary-drawer" aria-label="Salary Analytics Drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <h3 data-i18n="salary_drawer_title">Salary Benchmark Report</h3>
+            <button class="close-drawer-btn" id="close-salary-drawer" aria-label="Close Panel">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <div class="salary-tabs">
+                <button class="tab-btn active" data-sector="technology" data-i18n="dept_tech">Technology</button>
+                <button class="tab-btn" data-sector="finance" data-i18n="dept_finance">Finance</button>
+                <button class="tab-btn" data-sector="energy" data-i18n="dept_energy">Energy</button>
+            </div>
+            <div class="salary-chart-viewport" id="salary-chart-viewport">
+                <!-- Interactive SVG Chart dynamically generated -->
+            </div>
+            <div class="salary-meta-notes">
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:20px; line-height:1.4;">* Data indices are collected from wervingsprojecten, placement contract rates, and regional enterprise reports across wervingsregio Amsterdam B.V. 2026.</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand-col">
+                <img src="assets/logo.png" alt="Brainbox Talent & Innovation Services Logo" class="footer-logo-img" style="max-width: 180px; height: auto;">
+                <p class="footer-tagline" data-i18n="footer_tagline">Sourcing premium intellects and leadership talents for European, US and global enterprises.</p>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter / X">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Links 1: Services -->
+            <div class="footer-links-col">
+                <h4 class="footer-title" data-i18n="footer_services">Services</h4>
+                <ul>
+                    <li><a href="#services" data-i18n="service4_title">Executive Search</a></li>
+                    <li><a href="#services" data-i18n="service3_title">Contract-to-Hire</a></li>
+                    <li><a href="#services" data-i18n="service2_title">Permanent Hiring</a></li>
+                    <li><a href="#services" data-i18n="service5_title">Workforce Solutions</a></li>
+                </ul>
+            </div>
+
+            <!-- Links 2: Industries -->
+            <div class="footer-links-col">
+                <h4 class="footer-title" data-i18n="footer_sectors">Sectors</h4>
+                <ul>
+                    <li><a href="#industries" data-i18n="footer_sec_tech">Technology & AI</a></li>
+                    <li><a href="#industries" data-i18n="footer_sec_fin">Finance & Fintech</a></li>
+                    <li><a href="#industries" data-i18n="footer_sec_en">Energy & CleanTech</a></li>
+                    <li><a href="#industries" data-i18n="footer_sec_sci">Life Sciences & Pharma</a></li>
+                </ul>
+            </div>
+
+            <!-- Links 3: Contact/Newsletter -->
+            <div class="footer-newsletter-col">
+                <h4 class="footer-title" data-i18n="footer_newsletter_title">Newsletter</h4>
+                <p data-i18n="footer_newsletter_desc">Receive market-leading salary indices, executive trends and wervingsstudies.</p>
+                <form id="footer-newsletter-form" class="footer-newsletter-form">
+                    <input type="email" placeholder="email@company.com" required aria-label="Email address" data-i18n-attr="placeholder:newsletter_email_ph">
+                    <button type="submit" class="btn btn-primary btn-sm" data-i18n="newsletter_submit_btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Brainbox Staffing B.V. <span data-i18n="copyright_text">All rights reserved. Inspired by Brainbox Consulting.</span></p>
+            <div class="footer-legal-links">
+                <a href="#" data-i18n="legal_privacy">Privacy Policy</a>
+                <a href="#" data-i18n="legal_terms">Terms of Service</a>
+                <a href="#" data-i18n="legal_cookies">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS Map Script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+
+
+    <!-- Custom Application JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
