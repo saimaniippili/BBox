@@ -3350,6 +3350,42 @@ section {
     .talent-network-hub {
         transform: translate(-50%, -50%) scale(0.79);
     }
+    .roadmap-grid {
+        grid-template-columns: 1fr 60px 1fr;
+        gap: 24px 0;
+    }
+    .roadmap-track-container {
+        width: 100px;
+    }
+    .roadmap-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    .roadmap-node {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    .roadmap-icon-box {
+        width: 36px;
+        height: 36px;
+    }
+    .roadmap-icon-box svg {
+        width: 18px;
+        height: 18px;
+    }
+    .step-title {
+        font-size: 1.05rem;
+    }
+    .step-desc {
+        font-size: 0.8rem;
+    }
+    .roadmap-activities li {
+        font-size: 0.75rem;
+    }
+    .roadmap-milestone {
+        font-size: 0.7rem;
+    }
     section {
         padding: 80px 0;
     }
@@ -3465,6 +3501,60 @@ section {
     
     .slide-drawer {
         padding: 30px 16px;
+    }
+    
+    .roadmap-grid {
+        grid-template-columns: 1fr 44px 1fr;
+        gap: 16px 0;
+    }
+    .roadmap-track-container {
+        width: 70px;
+    }
+    .roadmap-card {
+        padding: 12px 10px;
+        border-radius: 10px;
+    }
+    .roadmap-card-header {
+        padding-bottom: 6px;
+    }
+    .roadmap-node {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+        border-width: 2px;
+    }
+    .roadmap-icon-box {
+        width: 28px;
+        height: 28px;
+    }
+    .roadmap-icon-box svg {
+        width: 14px;
+        height: 14px;
+    }
+    .step-title {
+        font-size: 0.9rem;
+    }
+    .step-desc {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+    .roadmap-phase, .roadmap-time {
+        font-size: 0.6rem;
+    }
+    .details-heading {
+        font-size: 0.65rem;
+    }
+    .roadmap-activities li {
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+    .roadmap-milestone {
+        font-size: 0.68rem;
+        padding: 8px 10px;
+    }
+    .bullet-dot {
+        width: 5px;
+        height: 5px;
     }
 }
 
@@ -3962,69 +4052,17 @@ section {
         gap: 48px;
     }
     
-    .roadmap-track-container {
-        display: none;
-    }
-    
     .roadmap-grid {
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 1fr 100px 1fr;
         gap: 32px 0;
     }
     
-    .roadmap-grid::before {
-        content: '';
-        position: absolute;
-        top: 24px;
-        bottom: 24px;
-        left: 25px;
-        width: 4px;
-        background: var(--border-color);
-        transform: translateX(-50%);
-        z-index: 1;
+    .roadmap-track-container {
+        width: 160px;
     }
     
-    .roadmap-step-left .roadmap-card-col,
-    .roadmap-step-right .roadmap-card-col {
-        grid-column: 2;
-        align-items: flex-start !important;
-    }
-    
-    .roadmap-step-left .roadmap-card,
-    .roadmap-step-right .roadmap-card {
-        text-align: left !important;
-    }
-    
-    .roadmap-step-left .roadmap-card-title-row,
-    .roadmap-step-right .roadmap-card-title-row {
-        flex-direction: row !important;
-    }
-    
-    .roadmap-step-left .roadmap-details,
-    .roadmap-step-right .roadmap-details {
-        text-align: left !important;
-    }
-    
-    .roadmap-step-left .roadmap-activities li,
-    .roadmap-step-right .roadmap-activities li {
-        flex-direction: row !important;
-        text-align: left !important;
-    }
-    
-    .roadmap-step-left .roadmap-milestone,
-    .roadmap-step-right .roadmap-milestone {
-        border-left: 3px solid var(--primary) !important;
-        border-right: none !important;
-        border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
-        text-align: left !important;
-    }
-    
-    .roadmap-node-col {
-        grid-column: 1;
-        justify-content: center;
-    }
-    
-    .roadmap-spacer-col {
-        display: none;
+    .roadmap-card {
+        padding: 20px;
     }
     
     .stats-visual-block-wrapper {
