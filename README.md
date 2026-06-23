@@ -4,7 +4,7 @@ A premium, interactive landing page for **Brainbox Staffing**, a corporate & tec
 
 ---
 
-## 🚀 Core Features
+##  Core Features
 
 1. **Unified Brainbox Matcher Core**:
    - A single, centered interactive matching node (Brainbox Engine) with three concentric spinning rings rotating in opposite directions.
@@ -21,7 +21,7 @@ A premium, interactive landing page for **Brainbox Staffing**, a corporate & tec
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **HTML5**: Structured with semantic tags (`<header>`, `<main>`, `<section>`, `<nav>`, `<footer>`) to optimize SEO and accessibility.
 - **CSS3 (Vanilla)**:
@@ -40,7 +40,7 @@ A premium, interactive landing page for **Brainbox Staffing**, a corporate & tec
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 /brainbox-staffing
@@ -55,7 +55,7 @@ A premium, interactive landing page for **Brainbox Staffing**, a corporate & tec
 
 ---
 
-## 💻 How to Run Locally
+##  How to Run Locally
 
 To view and interact with the page locally:
 1. Open a terminal in the project root directory.
